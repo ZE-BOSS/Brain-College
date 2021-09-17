@@ -1,0 +1,27 @@
+.pull-left {
+    float: left!important;
+}
+.fixed-table-toolbar .bs-bars, .fixed-table-toolbar .search, .fixed-table-toolbar .columns {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+	margin-left: 10px;
+    margin-right: 10px;
+    line-height: 34px;
+}
+.pull-right {
+    float: right!important;
+}
+.btn-group, .btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.fixed-table-toolbar .search .form-control {
+    padding: .55rem .95rem;
+}

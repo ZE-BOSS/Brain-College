@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Custom Video Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome/css/fontawesome-all.css">
+</head>
+<body>
+	
+   <div class="player">
+    <i class="far fa-play-circle video-play" style="display: inline; color: aliceblue; font-size: 75px;" id="show"></i>
+    <i class="far fa-pause-circle video-play-button" style="display: none; color: aliceblue; font-size: 75px;" id="show_pause"></i>
+    <i class="far fa-play-circle video-play-button" style="display: none; color: aliceblue; font-size: 75px;" id="show_play"></i>
+    <i class="fas fa-redo-alt video-play-button" style="display: none; color: aliceblue; font-size: 75px;" onclick="replay()" id="show_replay"></i>
+    <i class="fas fa-redo-alt video-play" style="display: none; color: aliceblue; font-size: 75px;" id="replay"></i>
+	<div id="overlay" class="overlay">
+		<video class="player__video viewer vid" onclick="showPlay()" onended="showReplay()">
+            <source src="vid.mp4">
+        </video>
+	</div>
+
+     <div class="controls">
+         <div class="timing">
+            <button style="color: white;" class="current">00:00</button>
+            <div class="progress">
+                <div class="progress__filled"></div>
+            </div>
+            <button style="color: white;" class="duration">00:00</button>
+         </div>
+        <button class="play" title="Play"  style="padding: 5px;" onclick="showPla()" id="main_play"><i class="far fa-play-circle"></i></button>
+        <button class="play" title="Pause" onclick="showPla()" style="display: none; padding: 5px;"  id="main_pause"><i class="far fa-pause-circle"></i></button>
+        <button class="play" title="Replay" onclick="showPla()" style="display: none; padding: 5px;" id="main_replay"><i class="fas fa-redo-alt"></i></button>
+        <button data-skip="-10" class="play Backward" onclick="remove()"><i class="fas fa-backward"></i></button>
+        <button class="play" title="Stop" onclick="stop()" style="padding: 5px;"  id="stop"><i class=" fas fa-stop-circle"></i></button>
+        <button data-skip="25" class="play Forward" onclick="remove()"><i class="fas fa-forward"></i></button>
+        <div class="sound">
+            <button class="play unmute" title="Volume" id="unmute" onclick="mute()"><i class="fas fa-volume-up"></i></button>
+            <button class="play mute" title="Volume" style="display: none; padding: 5px;" id="mute" onclick="unmute()"><i class="fas fa-volume-off"></i></button>
+            <button class="play volume" title="volume" style="display: none;" onclick="mute()"><i class="fas fa-volume-down"></i></button>
+            <input type="range" style="" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1" title="Volume" id="volume">
+        </div>
+        <button class="play fullscreen" title="Fullscreen" id="expand"><i class="fas fa-expand"></i></button>
+        <button class="play exitscreen" title="Fullscreen" style="display: none;" id="collapse"><i class="fas fa-compress"></i></button>
+     </div>
+   </div>
+
+  <script src="scripts.js"></script>
+  <script src="fontawsome.js"></script>
+</body>
+</html>
